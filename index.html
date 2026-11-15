@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>COSA-GS-Player (WebGPU)</title>
+  </head>
+  <body>
+    <header>
+      <h1>COSA-GS-Player <span>(WebGPU)</span></h1>
+      <p>Decode and render compressed COSA-GS scenes directly in your browser.</p>
+    </header>
+    <nav>
+      <select id="precision" disabled aria-label="Color accumulation precision">
+        <option id="precision-float32" value="rgba32float">32-bit color accumulation</option>
+        <option value="rgba16float">16-bit color accumulation</option>
+      </select>
+      <button id="previous" disabled>Previous view</button>
+      <select id="view" disabled aria-label="Reference view"></select>
+      <button id="next" disabled>Next view</button>
+      <button id="reset" disabled>Reset camera</button>
+      <button id="compare" disabled>Compare reference</button>
+      <button id="download" disabled>Save PNG</button>
+    </nav>
+    <p id="status" role="status">Initializing…</p>
+    <p><span class="hint">Source:</span> <span id="scene-source">Loading…</span></p>
+    <dl class="scene-summary" aria-label="Scene size, reconstruction quality and resolution">
+      <div>
+        <dt>Compressed input</dt>
+        <dd id="compressed-size">Loading…</dd>
+      </div>
+      <div>
+        <dt>Live WebGPU PSNR</dt>
+        <dd id="psnr" aria-live="polite">N/A</dd>
+      </div>
+      <div>
+        <dt title="CUDA render vs ground truth for the selected reference view">Precomputed CUDA PSNR</dt>
+        <dd id="cuda-psnr" aria-live="polite">N/A</dd>
+      </div>
+      <div>
+        <dt>Resolution</dt>
+        <dd id="render-resolution">N/A</dd>
+      </div>
+    </dl>
+    <main>
+      <figure>
+        <figcaption>
+          <span>WebGPU</span>
+          <span id="camera-hint" class="hint">
+            <span id="pose">Interactive camera</span> · Drag to orbit. Scroll or pinch to zoom.
+          </span>
+        </figcaption>
+        <canvas id="render" aria-describedby="camera-hint"></canvas>
+      </figure>
+      <figure>
+        <figcaption>
+          <span>Ground truth</span>
+        </figcaption>
+        <img id="target" alt="Resized ground-truth image for the selected view" />
+      </figure>
+    </main>
+    <p class="hint">
+      Rendering and PSNR use the ground-truth image resolution. Resizing the page does not change the render resolution.
+    </p>
+    <section id="codec-hashes" aria-labelledby="hash-title">
+      <h2 id="hash-title">Cross-platform hashes (SHA-256)</h2>
+      <p id="hash-status" class="hint" role="status">Available after decoding.</p>
+      <div id="hash-results" hidden>
+        <div class="hash-overview">
+          <div>
+            <span class="hint">Combined hash</span>
+            <code id="combined-hash"></code>
+          </div>
+          <button id="copy-hashes" disabled>Copy hashes</button>
+          <span id="hash-copy-status" class="hint" role="status"></span>
+        </div>
+        <details id="hash-details">
+          <summary id="hash-count">Matrix hashes</summary>
+          <p class="hint">Little-endian integers in row-major order.</p>
+          <div class="hash-table">
+            <table aria-label="Cross-platform matrix hashes">
+              <thead>
+                <tr>
+                  <th scope="col">Matrix</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Shape</th>
+                  <th scope="col">SHA-256</th>
+                </tr>
+              </thead>
+              <tbody id="hash-rows"></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </section>
+    <details id="validation-panel" open>
+      <summary>Validation and timing</summary>
+      <pre id="metrics"></pre>
+    </details>
+    <details id="difference-panel" hidden>
+      <summary>Difference (absolute error × 4)</summary>
+      <canvas id="difference" width="0" height="0"></canvas>
+    </details>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

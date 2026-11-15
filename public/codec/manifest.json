@@ -1,0 +1,17 @@
+{
+  "scene": "scene.bin",
+  "tables": "gaussian_cdfs.bin",
+  "config": {
+    "anchor_feat_channels": 32,
+    "n_offsets": 10,
+    "latent_context_channels": 24,
+    "anchor_context_channels": 24,
+    "expand_offset_entropy_hidden": true,
+    "anchor_latent_channels": 4,
+    "grid_size_in_stream": false,
+    "add_opacity_dist": true,
+    "add_cov_dist": true,
+    "add_color_dist": false
+  },
+  "anchorGridSize": 0.002
+}

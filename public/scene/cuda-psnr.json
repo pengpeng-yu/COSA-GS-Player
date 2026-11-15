@@ -1,0 +1,151 @@
+{
+  "description": "COSA-GS garden_lmb0.002 RGB8 render vs resized ground truth. PSNR is the arithmetic mean of the R, G and B channel PSNRs.",
+  "source": "garden_lmb0.002/per_view.json",
+  "group": "ours_30000",
+  "views": [
+    {
+      "name": "DSC07956",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 24.182117462158203
+    },
+    {
+      "name": "DSC07964",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 23.362133026123047
+    },
+    {
+      "name": "DSC07972",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 27.33877944946289
+    },
+    {
+      "name": "DSC07980",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 24.408763885498047
+    },
+    {
+      "name": "DSC07988",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 21.06414794921875
+    },
+    {
+      "name": "DSC07996",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 26.761966705322266
+    },
+    {
+      "name": "DSC08004",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 28.95051383972168
+    },
+    {
+      "name": "DSC08012",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 28.19565200805664
+    },
+    {
+      "name": "DSC08020",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 26.31965446472168
+    },
+    {
+      "name": "DSC08028",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 26.57264518737793
+    },
+    {
+      "name": "DSC08036",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 27.738296508789062
+    },
+    {
+      "name": "DSC08044",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 27.967275619506836
+    },
+    {
+      "name": "DSC08052",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 26.611724853515625
+    },
+    {
+      "name": "DSC08060",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 28.629985809326172
+    },
+    {
+      "name": "DSC08068",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 29.08560562133789
+    },
+    {
+      "name": "DSC08076",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 25.268657684326172
+    },
+    {
+      "name": "DSC08084",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 27.132553100585938
+    },
+    {
+      "name": "DSC08092",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 29.314062118530273
+    },
+    {
+      "name": "DSC08100",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 27.334762573242188
+    },
+    {
+      "name": "DSC08108",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 27.83479118347168
+    },
+    {
+      "name": "DSC08116",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 28.33028793334961
+    },
+    {
+      "name": "DSC08124",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 25.692668914794922
+    },
+    {
+      "name": "DSC08132",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 26.447296142578125
+    },
+    {
+      "name": "DSC08140",
+      "width": 1600,
+      "height": 1036,
+      "psnr": 27.765724182128906
+    }
+  ]
+}

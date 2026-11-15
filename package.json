@@ -1,0 +1,20 @@
+{
+  "name": "cosa-gs-player",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite --host 127.0.0.1",
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "validate": "node tools/validate.mjs",
+    "codec:build": "node tools/build-decoder.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "@webgpu/types": "0.1.74",
+    "typescript": "7.0.2",
+    "vite": "8.3.8"
+  }
+}
